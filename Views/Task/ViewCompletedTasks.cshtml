@@ -1,0 +1,36 @@
+@model IEnumerable<ToDoList.Models.Task>
+
+<br></br>
+<a href="Index" class="btn btn-primary"> Return </a>
+<br></br>
+<div class="container">
+    <fieldset>
+        <legend>
+            <label>List of Tasks Completed</label>
+        </legend>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Priority</th>
+                    <th>Deadline</th>
+                    <th>Percentage Completed</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.priority</td>
+                    <td>@item.deadline</td>
+                    <td>@item.percentageCompleted</td>
+                    <td><a class="btn btn-danger" href="Delete/@item.id">Delete</td>
+                </tr>
+            }
+        </table>
+    </fieldset>
+    </div>
